@@ -13,5 +13,8 @@
   "license": "MPL-2.0",
   "devDependencies": {
     "lightningcss": "^1.19.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
