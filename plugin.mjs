@@ -30,7 +30,7 @@ export default {
           let outsideWhereIndex = selectorGroup.findLastIndex(
             (part) => part.type === "pseudo-element"
           );
-          while (selectorGroup[outsideWhereIndex - 1].type === "combinator") {
+          while (selectorGroup[outsideWhereIndex - 1]?.type === "combinator") {
             outsideWhereIndex--;
           }
           const insideWhere = selectorGroup.slice(0, outsideWhereIndex);
