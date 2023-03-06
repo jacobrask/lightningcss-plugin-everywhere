@@ -1,8 +1,9 @@
 {
   "name": "lightningcss-plugin-everywhere",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightning CSS plugin to wrap every selector in :where()",
   "main": "plugin.mjs",
+  "types": "plugin.d.ts",
   "scripts": {
     "test": "node test/plugin.test.mjs"
   },
