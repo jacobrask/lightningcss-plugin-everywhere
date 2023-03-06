@@ -16,6 +16,12 @@ input[type="text"] {
 }
 ```
 
+## Install
+
+```sh
+yarn add lightningcss-plugin-everywhere
+```
+
 ## Usage
 
 ```js
