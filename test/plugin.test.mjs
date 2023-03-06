@@ -59,6 +59,29 @@ test("does not wrap pseudo element selector", () => {
   }
 });
 
+test("does not wrap :where() element selector", () => {
+  let { code } = transform({
+    filename: "style.css",
+    code: Buffer.from(":where(a), b, :where(p):before { color: red }"),
+    minify: true,
+    visitor: EveryWhere,
+  });
+  assert.strictEqual(
+    code.toString("utf-8"),
+    ":where(a),:where(b),:where(p):before{color:red}"
+  );
+});
+
+test("replaces :is() selector", () => {
+  let { code } = transform({
+    filename: "style.css",
+    code: Buffer.from(":is(a, b){ color: red }"),
+    minify: true,
+    visitor: EveryWhere,
+  });
+  assert.strictEqual(code.toString("utf-8"), ":where(a,b){color:red}");
+});
+
 test("does not wrap pseudo element selector combinators", () => {
   let { code } = transform({
     filename: "style.css",
